@@ -1,0 +1,47 @@
+[gd_scene load_steps=7 format=3 uid="uid://brvyfppg8t5t1"]
+
+[ext_resource type="Script" path="res://scripts/GridMapDemo.cs" id="1_ptjue"]
+[ext_resource type="PackedScene" uid="uid://duwqanmi7550v" path="res://scenes/godot_icon.tscn" id="2_0iok3"]
+[ext_resource type="Script" path="res://scripts/NumberTest.cs" id="3_jgj84"]
+[ext_resource type="Script" path="res://scripts/ColorTest.cs" id="4_it3u4"]
+
+[sub_resource type="SystemFont" id="SystemFont_lwnkl"]
+
+[sub_resource type="SystemFont" id="SystemFont_5nfq8"]
+
+[node name="Main" type="Node2D"]
+
+[node name="GridMap" type="Node2D" parent="."]
+position = Vector2(132, 35)
+script = ExtResource("1_ptjue")
+CellSize = 50
+packedScene = ExtResource("2_0iok3")
+Color = Color(0.47451, 0.988235, 0.921569, 1)
+
+[node name="GridMap2" type="Node2D" parent="."]
+position = Vector2(446, 26)
+script = ExtResource("1_ptjue")
+CellSize = 75
+Width = 2
+packedScene = ExtResource("2_0iok3")
+Color = Color(0.996078, 0.545098, 0.207843, 1)
+
+[node name="GridMap3" type="Node2D" parent="."]
+position = Vector2(831, 35)
+script = ExtResource("1_ptjue")
+CellSize = 100
+Width = 10
+Height = 2
+packedScene = ExtResource("2_0iok3")
+
+[node name="NumberVal" type="Node2D" parent="."]
+position = Vector2(1219, 451)
+script = ExtResource("3_jgj84")
+CellSize = 80
+Font = SubResource("SystemFont_lwnkl")
+
+[node name="BooleanVal" type="Node2D" parent="."]
+position = Vector2(97, 451)
+script = ExtResource("4_it3u4")
+CellSize = 80
+Font = SubResource("SystemFont_5nfq8")

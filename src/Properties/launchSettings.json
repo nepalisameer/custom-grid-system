@@ -1,0 +1,10 @@
+{
+  "profiles": {
+    "Custom Grid Godot": {
+      "commandName": "Executable",
+      "executablePath": "E:\\GODOTEngine\\Godot_v4.2-stable_mono_win64.exe",
+      "workingDirectory": ".",
+      "nativeDebugging": true
+    }
+  }
+}
