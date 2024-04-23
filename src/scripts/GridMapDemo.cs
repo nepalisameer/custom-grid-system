@@ -17,13 +17,12 @@ public partial class GridMapDemo : Node2D
 
     public override void _Process(double delta)
     {
-        if (Input.IsActionJustPressed("ui_accept"))
+        if (Input.IsActionJustPressed("mouse_left"))
         {
             var a = packedScene.Instantiate<Node2D>();
             if (customGrid.TrySetItem(GetGlobalMousePosition(), a, out var x))
             {
                 AddChild(a);
-                //a.GlobalPosition = x + new Vector2(size / 2, size / 2); // set to center og grid
                 a.GlobalPosition = x;
             }
         }

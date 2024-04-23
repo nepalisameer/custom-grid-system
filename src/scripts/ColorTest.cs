@@ -23,7 +23,7 @@ namespace CustomGridGodot.scripts
 
         public override void _Process(double delta)
         {
-            if (Input.IsActionJustPressed("ui_accept"))
+            if (Input.IsActionJustPressed("mouse_left"))
             {
                 
                 if (customGrid.TrySetItem(GetGlobalMousePosition(), true, out var x))
@@ -50,8 +50,9 @@ namespace CustomGridGodot.scripts
                 for (int i = 0; i < customGrid.GridPositions.Count; i++)
                 {
                     DrawRect(new Rect2(customGrid.GridPositions[i] + new Vector2(customGrid.CellSize - (customGrid.CellSize * gap), customGrid.CellSize - (customGrid.CellSize * gap)) / 2, customGrid.CellSize * gap, customGrid.CellSize * gap), Color, filled: false, width: 3);
-                    var a = customGrid.TryGetItem(customGrid.GridPositions[i], out var x);
-                    DrawRect(new Rect2(customGrid.GridPositions[i] + new Vector2(customGrid.CellSize - (customGrid.CellSize * gap2), customGrid.CellSize - (customGrid.CellSize * gap2)) / 2, customGrid.CellSize * gap2, customGrid.CellSize * gap2), a?Colors.Yellow:Colors.Black, filled: true);
+                    var cellValue = customGrid.TryGetItem(customGrid.GridPositions[i], out var x);
+                    //drawing filled rect base on grid cell value
+                    DrawRect(new Rect2(customGrid.GridPositions[i] + new Vector2(customGrid.CellSize - (customGrid.CellSize * gap2), customGrid.CellSize - (customGrid.CellSize * gap2)) / 2, customGrid.CellSize * gap2, customGrid.CellSize * gap2), cellValue?Colors.Yellow:Colors.Black, filled: true);
                     DrawString(Font, customGrid.GridPositions[i] + new Vector2(customGrid.CellSize/4, customGrid.CellSize / 2), x.ToString(),modulate:Colors.BlueViolet, fontSize: 16);
                 }
             }

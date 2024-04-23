@@ -23,7 +23,7 @@ namespace CustomGridGodot.scripts
 
         public override void _Process(double delta)
         {
-            if (Input.IsActionJustPressed("ui_accept"))
+            if (Input.IsActionJustPressed("mouse_left"))
             {
                 var a = Random.Shared.Next(1, 100);
                 if (customGrid.TrySetItem(GetGlobalMousePosition(), a, out var x))
